@@ -1,0 +1,48 @@
+name: nvd
+help: Neovim distro manager
+version: 0.1.0
+help: |
+  Depends on Neovim 0.9+
+
+commands:
+  - name: install
+    alias: i
+    help: Install a Neovim distro
+    args:
+      - name: url
+        required: false
+        help: Git repo to clone
+
+    flags:
+      - long: --name
+        short: -n
+        arg: name
+        help: The name given to the Neovim distro
+        required: false
+
+    examples:
+      - cli download example.com
+      - cli download example.com ./output -f
+
+  - name: uninstall
+    alias: u
+    help: Uninstall a Neovim distro
+    args:
+      - name: name
+        required: false
+        help: Neovim distro to uninstall
+
+    examples:
+      - cli download example.com
+      - cli download example.com ./output -f
+
+  - name: run
+    alias: r
+    help: Start Neovim from an installed distro
+    args:
+      - name: name
+        required: false
+        help: Neovim distro to use
+
+    examples:
+      - nvd run kickstart
