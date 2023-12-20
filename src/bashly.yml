@@ -1,7 +1,7 @@
 name: nvd
 help: Neovim distro manager
 version: 0.1.0
-help: |
+footer: |
   Depends on Neovim 0.9+
 
 commands:
@@ -39,6 +39,7 @@ commands:
   - name: run
     alias: r
     help: Start Neovim from an installed distro
+    default: true
     args:
       - name: name
         required: false
