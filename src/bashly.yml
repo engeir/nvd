@@ -5,6 +5,11 @@ footer: |
   Depends on Neovim 0.9+
 
 commands:
+  - name: completions
+    alias: c
+    help: |-
+      Generate bash completions
+      Usage: eval "\$(nvd completions)"
   - name: install
     alias: i
     help: Install a Neovim distro
@@ -21,8 +26,10 @@ commands:
         required: false
 
     examples:
-      - cli download example.com
-      - cli download example.com ./output -f
+      - nvd install
+      - nvd install git@github.com:nvim-lua/kickstart.nvim.git
+      - nvd install git@github.com:nvim-lua/kickstart.nvim.git -n kickstart
+      - nvd install git@github.com:nvim-lua/kickstart.nvim.git --name kickstart
 
   - name: uninstall
     alias: u
@@ -33,8 +40,8 @@ commands:
         help: Neovim distro to uninstall
 
     examples:
-      - cli download example.com
-      - cli download example.com ./output -f
+      - nvd uninstall
+      - nvd uninstall kickstart
 
   - name: run
     alias: r
