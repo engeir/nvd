@@ -10,6 +10,7 @@ commands:
     help: |-
       Generate bash completions
       Usage: eval "\$(nvd completions)"
+
   - name: install
     alias: i
     help: Install a Neovim distro
@@ -17,14 +18,12 @@ commands:
       - name: url
         required: false
         help: Git repo to clone
-
     flags:
       - long: --name
         short: -n
         arg: name
         help: The name given to the Neovim distro
         required: false
-
     examples:
       - nvd install
       - nvd install git@github.com:nvim-lua/kickstart.nvim.git
@@ -38,7 +37,6 @@ commands:
       - name: name
         required: false
         help: Neovim distro to uninstall
-
     examples:
       - nvd uninstall
       - nvd uninstall kickstart
@@ -51,6 +49,11 @@ commands:
       - name: name
         required: false
         help: Neovim distro to use
-
     examples:
       - nvd run kickstart
+
+  - name: sync
+    alias: s
+    help: Sync the git repos
+    examples:
+      - nvd sync
